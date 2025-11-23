@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <button>
+    <mat-icon>local_pizza</mat-icon>
+  </button>
+  <span
+    class="logo"
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+    >Pizza App</span
+  >
+
+  @if(isLoggedIn()) {
+  <a mat-button routerLink="/pizza-maker" routerLinkActive="active">Kitchen</a>
+  <a mat-button routerLink="/previous-orders" routerLinkActive="active"
+    >Previous Orders</a
+  >
+  <a mat-button (click)="onLogout()">Logout</a>
+  }
+  
+  @if(!isLoggedIn()) {
+  <ng-container>
+    <a mat-button routerLink="/login" routerLinkActive="active"
+      >Login</a>
+    <a mat-button routerLink="/register" routerLinkActive="active"
+      >Register</a>
+  </ng-container>
+  }
+</mat-toolbar>

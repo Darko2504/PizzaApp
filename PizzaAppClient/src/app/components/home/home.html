@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <mat-card>
+    <img height="100%" width="600px" src="/assets/pizza-maker-logo.png" alt="logo" />
+    <mat-card-actions>
+        @if(isLoggedIn()){
+            <button mat-fab extended color="primary" routerLink="/pizza-maker">Make your own pizza</button>
+        }
+    </mat-card-actions>
+  </mat-card>
+  <h1>Don't know what ingredient to choose> Get inspired by our most popular pizzas...</h1>
+  <app-pizza-cards/>
+</div>
